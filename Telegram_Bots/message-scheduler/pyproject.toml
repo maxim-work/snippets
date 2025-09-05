@@ -1,0 +1,15 @@
+[project]
+name = "message-scheduler"
+version = "0.1.0"
+description = "A cool Telegram bot with apscheduler and aiogram"
+dependencies = [
+    "aiogram>=3.0.0",
+    "apscheduler>=3.10.0",
+    "python-dotenv>=1.0.0",
+    "asyncpg>=0.29.0",
+]
+requires-python = ">=3.13"
+
+[project.urls]
+Homepage = "https://github.com/yourname/yourrepo"
+Telegram = "https://t.me/vrode_it"
