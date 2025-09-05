@@ -1,109 +1,97 @@
-⏰ TimeSender Bot
+TimeSender Bot
 
-Telegram-бот для отложенной отправки сообщений в указанный чат. Напишите сообщение сейчас — получите его точно в нужное время!
-✨ Возможности
+A Telegram bot for scheduled message delivery to a specified chat. Write a message now — receive it at exactly the right time!
+Features
 
-    Отложенная отправка: Назначьте точное время для отправки любого сообщения.
+    Scheduled Delivery: Set a precise time for sending any message.
 
-    Любой чат: Отправляйте сообщения в любой чат или канал, куда добавлен бот.
+    Any Chat: Send messages to any group or channel where the bot has been added.
 
-    Простой интерфейс: Общение с ботом через интуитивно понятные команды.
+    Simple Interface: Interact with the bot through intuitive buttons.
 
-    Гибкость: Поддержка текста, изображений, видео и других форматов сообщений.
+    Flexibility: Supports text and images.
 
-🚀 Установка и запуск (Self-Hosted)
+Installation and Setup (Self-Hosted)
 
-Вы можете развернуть свою собственную копию этого бота.
-Предварительные требования
+You can deploy your own instance of this bot.
+Prerequisites
 
-    Python 3.8 или выше
+    Python 3.8 or higher
 
     PostgreSQL server
 
-    Telegram Bot Token (получить у @BotFather)
+    Telegram Bot Token (get from @BotFather)
 
-    Ваш Telegram ID (можно узнать у @userinfobot)
+    Your Telegram ID (find out by messaging @userinfobot)
 
-1. Клонирование репозитория
+1. Cloning the Repository
 bash
 
 git clone https://github.com/yourusername/your-bot-repo.git
 cd your-bot-repo
 
-2. Настройка виртуального окружения и зависимостей
+2. Setting Up a Virtual Environment and Dependencies
 bash
 
-# Создание виртуального окружения
+# Create a virtual environment
 python -m venv venv
 
-# Активация (Linux/macOS)
+# Activation (Linux/macOS)
 source venv/bin/activate
 
-# Активация (Windows)
+# Activation (Windows)
 .\venv\Scripts\activate
 
-# Установка зависимостей
+# Install dependencies
 pip install -e .
 
-3. Настройка переменных окружения
+3. Configuring Environment Variables
 
-Создайте файл .env на основе примера:
+Create a .env file based on the example:
 bash
 
 cp .env_example .env
 
-Отредактируйте файл .env в любом текстовом редакторе, заполнив свои данные:
+Edit the .env file in any text editor, filling in your details:
 env
 
-# Обязательные настройки
+# Required settings
 BOT_TOKEN=your_bot_token_here_from_botfather
 ADMIN_ID=your_telegram_id_here
 DATABASE_URL=postgresql://username:password@localhost:5432/database_name
 
-# Опциональные настройки
-# LOG_LEVEL=INFO
+Where to get the data:
 
-Где взять данные:
+    BOT_TOKEN: Get it from @BotFather when creating your bot.
 
-    BOT_TOKEN: Получите у @BotFather при создании бота
+    ADMIN_ID: Find out by sending /start to the bot @userinfobot.
 
-    ADMIN_ID: Узнайте, отправив /start боту @userinfobot
+    DATABASE_URL: Connection string for your PostgreSQL database.
 
-    DATABASE_URL: Строка подключения к вашей PostgreSQL БД
+4. Database Initialization
 
-4. Инициализация базы данных
-
-Запустите скрипт инициализации для создания необходимых таблиц:
+Run the script - the necessary tables will create themselves.
+5. Starting the Bot
 bash
 
-python scripts/init_db.py
+python bot/main.py
 
-5. Запуск бота
-bash
+The bot should start and send you a message about successful initialization.
+6. Adding the Bot to a Chat
 
-python src/bot/main.py
+Add your bot to the desired groups or channels and appoint it as an administrator with the permission to send messages.
+Technical Information
 
-Бот должен запуститься и отправить вам сообщение о успешном старте.
-6. Добавление бота в чат
+    Technology Stack: Python, Aiogram, APScheduler, AsyncPG, PostgreSQL
 
-Добавьте своего бота в нужные чаты и каналы и назначьте его администратором с правом отправки сообщений.
-📖 Инструкция по использованию
+    License: MIT
 
-После запуска используйте команду /send в личных сообщениях с ботом для планирования сообщений.
-🛠 Техническая информация
+Support
 
-    Стек технологий: Python, Aiogram, APScheduler, AsyncPG, PostgreSQL
+Encountering problems with setup?
 
-    Лицензия: MIT
+    Create an Issue in the repository
 
-🤝 Поддержка
+    Subscribe to the channel: https://t.me/vrode_it
 
-Возникли проблемы с запуском?
-
-    Создайте Issue в репозитории
-
-    Напишите автору: [Ваш @username]
-
-    Подпишитесь на канал: [Ссылка на ваш канал]
-
-Сделано с ❤️ и точным таймингом. Вы можете свободно использовать и модифицировать этот код.
+You are free to use and modify this code.
